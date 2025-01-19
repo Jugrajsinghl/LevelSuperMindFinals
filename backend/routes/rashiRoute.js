@@ -1,10 +1,13 @@
 import express from "express";
-import { RasiInsight, rasiChart } from "../controllers/RasiController.js";
+import { ChatbotLLM, RasiInsight, rasiChart, zodiacData, zodiacSign } from "../controllers/RasiController.js";
 
 const rasiRouter = express.Router();
 
 rasiRouter.post("/rasiInsight", RasiInsight);
 rasiRouter.post("/rasiRoute", rasiChart);
+rasiRouter.post("/zodiacSign", zodiacSign);
+rasiRouter.post("/zodiacData", zodiacData);
+rasiRouter.post("/message", ChatbotLLM);
 
 
 

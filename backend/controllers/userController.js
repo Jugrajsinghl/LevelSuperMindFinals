@@ -7,7 +7,7 @@ import "dotenv/config";
 
 const registerUser = async (req, res) => {
   try {
-    const { name, email, password, pincode } = req.body;
+    const { name, email, password } = req.body;
 
     if (!name || !password || !email ) {
       return res.json({

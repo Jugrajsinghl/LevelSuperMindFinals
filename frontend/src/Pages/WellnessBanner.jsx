@@ -6,41 +6,42 @@ export default function WellnessBanner() {
   const sections = [
     {
       id: 'videos',
-      title: 'Wellness Videos',
+      title: 'Spirtual Videos',
       icon: Video,
-      description: 'Guided meditations and mental health resources',
+      description: 'Explore spiritual wisdom through guided visuals',
       gradient: 'from-purple-500 to-indigo-500',
       href: '/videos'
     },
     {
       id: 'books',
-      title: 'Recommended Books',
+      title: 'Spirtual Books',
       icon: BookOpen,
-      description: 'Curated reading for mental well-being',
+      description: 'Timeless teachings for spiritual enlightenment',
       gradient: 'from-emerald-500 to-teal-500',
       href: '/wellness_books'
     },
     {
       id: 'games',
-      title: 'Mindful Games',
+      title: 'Soulful Games',
       icon: GamepadIcon,
-      description: 'Interactive exercises for mental fitness',
+      description: 'Engage in mindful activities for inner peace',
       gradient: 'from-orange-500 to-pink-500',
       href: '/WellnessGames'
     }
   ];
 
   return (
-    <div className="bg-[#0A0A2A] py-12 mt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div className="bg-[#0A0A2A] py-12 ">
+      <h1 className=' text-center mb-16 text-[35px] font-semibold text-yellow-300 w-fit m-auto border-0 border-b-2 border-yellow-500'>Your path to Spirtuality...</h1>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 ">
           {sections.map((section) => {
             const Icon = section.icon;
             return (
               <a
                 key={section.id}
                 href={section.href}
-                className="group relative overflow-hidden rounded-2xl p-6 bg-white shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+                className="group relative overflow-hidden rounded-2xl p-6 bg-white shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 px-8 py-3 bg-gradient-to-r from-purple-100 to-pink-200 text-lg font-semibold hover:from-purple-200 hover:to-pink-300 transition-all transform hover:scale-105"
               >
                 {/* Gradient Overlay */}
                 <div

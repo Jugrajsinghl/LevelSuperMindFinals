@@ -3,9 +3,11 @@ import { Palette, RotateCcw, Download } from 'lucide-react';
 
 const ZenPatterns = () => {
   const canvasRef = useRef(null);
+  const lastPosRef = useRef({ x: 0, y: 0 });
   const [isDrawing, setIsDrawing] = useState(false);
   const [color, setColor] = useState('#4F46E5');
   const [symmetry, setSymmetry] = useState(8);
+  const [brushSize, setBrushSize] = useState(2);
   
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -29,6 +31,18 @@ const ZenPatterns = () => {
     ctx.stroke();
   }, []);
 
+  const startDrawing = (e) => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    
+    const rect = canvas.getBoundingClientRect();
+    const x = e.touches ? e.touches[0].clientX - rect.left : e.clientX - rect.left;
+    const y = e.touches ? e.touches[0].clientY - rect.top : e.clientY - rect.top;
+    
+    lastPosRef.current = { x, y };
+    setIsDrawing(true);
+  };
+
   const draw = (e) => {
     const canvas = canvasRef.current;
     if (!canvas || !isDrawing) return;
@@ -44,7 +58,9 @@ const ZenPatterns = () => {
     const centerY = canvas.height / 2;
     
     ctx.strokeStyle = color;
-    ctx.lineWidth = 2;
+    ctx.lineWidth = brushSize;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
     
     for (let i = 0; i < symmetry; i++) {
       ctx.save();
@@ -52,12 +68,14 @@ const ZenPatterns = () => {
       ctx.rotate((Math.PI * 2 * i) / symmetry);
       
       ctx.beginPath();
-      ctx.moveTo(x - centerX, y - centerY);
-      ctx.lineTo(x - centerX + 1, y - centerY + 1);
+      ctx.moveTo(lastPosRef.current.x - centerX, lastPosRef.current.y - centerY);
+      ctx.lineTo(x - centerX, y - centerY);
       ctx.stroke();
       
       ctx.restore();
     }
+    
+    lastPosRef.current = { x, y };
   };
 
   const clearCanvas = () => {
@@ -90,7 +108,7 @@ const ZenPatterns = () => {
         </div>
 
         <div className="bg-white rounded-xl shadow-lg p-6">
-          <div className="flex justify-center gap-4 mb-6">
+          <div className="flex flex-wrap justify-center gap-4 mb-6">
             <div className="flex items-center gap-2">
               <label className="text-gray-600">Color:</label>
               <input
@@ -99,6 +117,18 @@ const ZenPatterns = () => {
                 onChange={(e) => setColor(e.target.value)}
                 className="w-8 h-8 rounded cursor-pointer"
               />
+            </div>
+            <div className="flex items-center gap-2">
+              <label className="text-gray-600">Brush Size:</label>
+              <input
+                type="range"
+                min="1"
+                max="20"
+                value={brushSize}
+                onChange={(e) => setBrushSize(Number(e.target.value))}
+                className="w-24"
+              />
+              <span className="text-gray-600 w-6">{brushSize}</span>
             </div>
             <div className="flex items-center gap-2">
               <label className="text-gray-600">Symmetry:</label>
@@ -131,11 +161,11 @@ const ZenPatterns = () => {
           <div className="flex justify-center">
             <canvas
               ref={canvasRef}
-              onMouseDown={() => setIsDrawing(true)}
+              onMouseDown={startDrawing}
               onMouseUp={() => setIsDrawing(false)}
               onMouseMove={draw}
               onMouseLeave={() => setIsDrawing(false)}
-              onTouchStart={() => setIsDrawing(true)}
+              onTouchStart={startDrawing}
               onTouchEnd={() => setIsDrawing(false)}
               onTouchMove={draw}
               className="border rounded-lg touch-none"

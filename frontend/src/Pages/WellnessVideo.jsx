@@ -6,21 +6,21 @@ import Navigation from './WellnessBanner';
 const videos = [
   {
     id: '1',
-    title: '12 Daily Habits for Mental Wellness',
-    description: 'In todays episode, we will learn how some tips for mental wellness.',
-    videoId: '7_chERnJ0gE'
+    title: 'Live Life to the fullest',
+    description: 'It emphasizes living with awareness, balance, and inner peace. He teaches that true fulfillment comes from understanding oneself and aligning actions with higher purpose, rather than external achievements',
+    videoId: '9s-2wkfBk4s?si=uUTu6irSV_u8nB8u'
   },
   {
     id: '2',
-    title: 'Atomic Habits for Mental Health',
-    description: 'Learn effective breathing exercises for managing stress and anxiety.',
-    videoId: 'AOHT-YiOeQA'
+    title: '10 Minutes to Start Your Day Right!',
+    description: 'It offers a quick, transformative morning routine that helps you center your mind, invigorate your body, and align your energy. Through practical techniques like breathing exercises and mindful awareness, it encourages a balanced, calm, and focused approach to life, setting a positive foundation for the day ahead.',
+    videoId: 'BjVPyzegUOQ?si=fKJSQ31yo5lUFsmi'
   },
   {
     id: '3',
-    title: '10 Common Mental Illnesses Crash Course',
-    description: 'What is mental illness or mental disorder? According to the National Alliance on Mental Illness, mental illness is defined as a condition that negatively affects a person thinking, feeling or mood for a sustained period of time.',
-    videoId: 'IaSpas9hWNQ'
+    title: 'Understanding Karma',
+    description: 'Karma is the law of cause and effect, where every action, thought, or intention influences future outcomes. Good actions lead to positive results, while negative actions bring consequences, shaping one\'s destiny.',
+    videoId: 'a0mYxG89JtQ?si=lw0PEY7IWPRE10KR'
   }
 ];
 
@@ -30,12 +30,12 @@ const VideoSection = () => {
   return (
     <>
     <Navigation/>
-    <section className="bg-gradient-to-b from-indigo-50 to-white py-16">
+    <section className="bg-gradient-to-b from-emerald-50 to-white py-16">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Wellness Videos</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Discover our curated collection of mental wellness videos designed to help you find peace, 
+            Discover our curated collection of Spiritual videos designed to help you find peace, 
             clarity, and balance in your daily life.
           </p>
         </div>

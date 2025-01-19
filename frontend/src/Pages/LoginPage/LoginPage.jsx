@@ -1,14 +1,43 @@
 import React, { useState } from 'react';
 import { Sun, Moon, Mail, Lock, User, ArrowRight } from 'lucide-react';
-
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios'
 function App() {
   
   const [isLogin, setIsLogin] = useState(true);
   const [darkMode, setDarkMode] = useState(false);
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const toggleForm = () => setIsLogin(!isLogin);
   const toggleTheme = () => setDarkMode(!darkMode);
-
+  const navigate = useNavigate()
+const handlesubmit = async(e)=>{
+e.preventDefault()
+if(isLogin){
+  try {
+    const response = await axios.post('http://localhost:3000/api/user/login',{email,password})
+  if(response){
+    localStorage.setItem('token',response.data.token)
+navigate('/')
+  }
+  } catch (error) {
+    console.log(error);
+  }
+  
+}else{
+  try {
+    const response = await Axis3DIcon.post('http://localhost:3000/api/user/register',{name,email,password})
+    if(response){
+      localStorage.setItem('token',response.data.token)
+  navigate('/')
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+}
   return (
     <div className={`min-h-screen w-full transition-colors duration-300 ${darkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
       {/* Theme toggle */}
@@ -32,7 +61,7 @@ function App() {
             {isLogin ? 'Welcome Back!' : 'Create Account'}
           </h1>
 
-          <form onSubmit={(e) => e.preventDefault()} className="space-y-6">
+          <form onSubmit={handlesubmit} className="space-y-6">
             {!isLogin && (
               <div>
                 <label className="block text-sm font-medium mb-2">Name</label>
@@ -40,6 +69,7 @@ function App() {
                   <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
                   <input
                     type="text"
+                    onChange={(e)=>setName(e.target.value)}
                     placeholder="John Doe"
                     className={`w-full pl-10 pr-4 py-2 rounded-lg border focus:ring-2 focus:outline-none transition-colors ${
                       darkMode 
@@ -57,6 +87,7 @@ function App() {
                 <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
                 <input
                   type="email"
+                  onChange={(e)=>setEmail(e.target.value)}
                   placeholder="you@example.com"
                   className={`w-full pl-10 pr-4 py-2 rounded-lg border focus:ring-2 focus:outline-none transition-colors ${
                     darkMode 
@@ -73,6 +104,7 @@ function App() {
                 <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
                 <input
                   type="password"
+                  onChange={(e)=>setPassword(e.target.value)}
                   placeholder="••••••••"
                   className={`w-full pl-10 pr-4 py-2 rounded-lg border focus:ring-2 focus:outline-none transition-colors ${
                     darkMode 

@@ -18,7 +18,7 @@ const games = [
   {
     id: '2',
     title: 'Memory Garden',
-    description: 'Cultivate mindfulness by matching pairs of peaceful nature symbols. Each match reveals a calming meditation tip.',
+    description: 'Cultivate mindfulness by pairing sacred symbols of spirituality. Each match unveils a peaceful meditation practice to deepen your inner awareness and tranquility.',
     icon: Brain,
     color: 'indigo',
     benefits: ['Memory improvement', 'Concentration', 'Mindful awareness'],
@@ -29,7 +29,7 @@ const games = [
   {
     id: '3',
     title: 'Zen Patterns',
-    description: 'Create beautiful mandala patterns through gentle finger movements. A meditative experience that combines art and mindfulness.',
+    description: 'Create beautiful mandala patterns through gentle finger movements. A meditative experience that combines art and spiritualness.',
     icon: Fingerprint,
     color: 'indigo',
     benefits: ['Creativity', 'Relaxation', 'Emotional balance'],
@@ -68,7 +68,7 @@ const WellnessGames = () => {
         navigate(link)
     }
   return (
-    <section id="games" className="bg-gradient-to-b from-violet-50 to-white py-16">
+    <section id="games" className="bg-gradient-to-b from-emerald-50 to-white py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-2 mb-4">
@@ -76,8 +76,7 @@ const WellnessGames = () => {
             <h2 className="text-3xl font-bold text-gray-900">Mindful Games</h2>
           </div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Explore our collection of interactive mindfulness games designed to enhance your mental well-being through engaging and peaceful gameplay.
-          </p>
+          Explore our collection of interactive spiritual games crafted to nurture your inner peace, elevate your consciousness, and promote mental well-being through mindful and engaging gameplay.          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -1,45 +1,45 @@
 import React from 'react';
 import { BookOpen, Star, ExternalLink } from 'lucide-react';
 import Navigation from './WellnessBanner';
+import yogi from '../assets/yogi.jpg'
+import bhagwatgita from '../assets/bhagwatgita.jpg'
+import karma from '../assets/karma.jpg'
 
 const books = [
   {
     id: '1',
-    title: 'The Power of Now',
-    author: 'Eckhart Tolle',
+    title: 'Autobiography of a yogi',
+    author: ' Paramahansa Yogananda',
     description:
-      'A guide to spiritual enlightenment and living in the present moment, helping readers find peace and reduce anxiety through mindfulness practices.',
+      '"Autobiography of a Yogi" reveals the path of self-realization through yoga, meditation, and spiritual insights, bridging Eastern wisdom with universal truth.',
     rating: 4.7,
-    coverUrl:
-      'https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=800',
+    coverUrl:yogi,
     amazonUrl:
-      'https://www.amazon.com/Power-Now-Guide-Spiritual-Enlightenment/dp/1577314808',
+      'https://www.amazon.in/Autobiography-Yogi-HINDI-Paramahansa-Yogananda/dp/9389432472/ref=zg_bs_g_10533824031_d_sccl_4/262-7165653-8528301?psc=1',
     tags: ['Mindfulness', 'Spirituality', 'Self-Help']
   },
   {
     id: '2',
-    title: 'Atomic Habits',
-    author: 'James Clear',
+    title: 'Karma',
+    author: 'Sadhguru ',
     description:
-      'Learn how to build good habits and break bad ones through small changes that lead to remarkable results in mental wellness and personal growth.',
+      'It explores how karma shapes life and shows how conscious action creates freedom and purpose.',
     rating: 4.8,
-    coverUrl:
-      'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=800',
+    coverUrl:karma,
     amazonUrl:
-      'https://www.amazon.com/Atomic-Habits-Proven-Build-Break/dp/0735211299',
+      'https://www.amazon.in/Karma-Yogis-Guide-Crafting-Destiny/dp/0143452673/ref=zg_bs_g_10533824031_d_sccl_10/262-7165653-8528301?psc=1',
     tags: ['Habits', 'Personal Development', 'Psychology']
   },
   {
     id: '3',
-    title: 'Think Like a Monk',
-    author: 'Jay Shetty',
+    title: 'Shrimad BhagwatGita',
+    author: ' A.C. Bhaktivendanta Swami Prabhupada',
     description:
-      'Drawing on ancient wisdom and his own experience as a monk, Jay Shetty reveals how to overcome negative thoughts and habits to access the calm within.',
+      'It is a sacred scripture of Hindu philosophy, part of the Mahabharata, where Lord Krishna imparts spiritual wisdom to Arjuna. It explores themes like duty (dharma), devotion, and self-realization, offering guidance for living a purposeful and balanced life. It is revered as a universal guide to spiritual and ethical living.',
     rating: 4.6,
-    coverUrl:
-      'https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=800',
+    coverUrl:bhagwatgita,
     amazonUrl:
-      'https://www.amazon.com/Think-Like-Monk-Train-Purpose/dp/1982134488',
+      'https://www.amazon.in/Shrimad-Bhagwat-Geeta-Yatharoop-Hindi/dp/938598618X/ref=sr_1_3?crid=1AII671XFH8G2&dib=eyJ2IjoiMSJ9.3_TY77GMs83QE5zQnxCIlF5wrCwXjq4W1r3SaAhXSy_6nRcIaW_ySksm2TVTKgDvR7nnUv_Efc_10HAUN4z51R2a0o-OdFPdc7hMonC5gPIQerjUMbrjaEfs5O7xuaxbeEEwpUEHMLlVGs65G-xWkrnA6Cb1CSJtpKTZadNSfLnaiT2yJeeUl6Fja6u1P43yWVwqOyt3LiUilgD7JrT_NKnMXHfqx1zeMD8UHclbMTA.YL_G1edzXkxkxTogHiuZqal95i8GfKVfVevOff6KoKw&dib_tag=se&keywords=gita&qid=1737229333&s=books&sprefix=gita%2Cstripbooks%2C179&sr=1-3',
     tags: ['Mindfulness', 'Wisdom', 'Mental Peace']
   }
 ];
@@ -56,7 +56,7 @@ const WellnessBook = () => {
             <h2 className="text-3xl font-bold text-gray-900">Mindfulness Library</h2>
           </div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Discover transformative books that will guide you on your journey to mental wellness and inner peace.
+            Discover transformative books that will guide you on your journey to Spiritual wellness and inner peace.
           </p>
         </div>
 
